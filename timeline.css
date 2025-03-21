@@ -1,0 +1,736 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@400;700&display=swap');
+
+/* Ensure Full-Screen Fit */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif Ethiopic', serif;
+    background: linear-gradient(rgba(214, 197, 171, 0.998), rgba(194, 179, 175, 0.372)), url('pictures/background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    overflow-y: auto; /* Allows scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-header {
+    position: relative;  /* Ensures children (h6, h3) are positioned relative to this */
+    text-align: center;
+    width: 100%;
+    padding-top: 8vh;
+}
+
+h6 {
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #222;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.3vw;
+
+    position: absolute;  /* Makes it stay at the top */
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+h3 {
+    font-size: 2.5vw;
+    font-weight: normal;
+    text-align: center;
+    font-style: italic;
+    color: #444;
+
+    position: absolute;  /* Stays fixed below h6 */
+    top: 16vh;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+    h6 {
+        font-size: 5vw;
+        top: 3vh; /* Adjust position */
+    }
+    h3 {
+        font-size: 3.5vw;
+        top: 10vh; /* Adjust position */
+    }
+}
+
+
+.timeline-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: background-color 0.3s ease;
+}
+
+.timeline-arrow:hover {
+    background-color: gray;
+}
+.timeline-arrow-right {
+    right: -50px; /* Position it outside the right of the timeline */
+}
+
+/* Medium Screens (Tablets) */
+@media screen and (max-width: 1024px) {
+    .timeline-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .timeline-arrow-right {
+        right: -40px;
+    }
+}
+
+/* Small Screens (Phones) */
+@media screen and (max-width: 768px) {
+    .timeline-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .timeline-arrow-right {
+        right: -30px;
+    }
+}
+
+/* Extra Small Screens (Very Small Phones) */
+@media screen and (max-width: 480px) {
+    .timeline-arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .timeline-arrow-right {
+        right: -20px;
+    }
+}
+
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    display:flex;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+
+/* Timeline Line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: black;
+    transform: translateY(-50%);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column; /* Stack events vertically */
+}
+
+/* Timeline Event Base */
+.event {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.vertical-line {
+    position: absolute;
+    width: 2px;
+    background-color: black;
+    height: 100%; /* Adjust if needed */
+    top: 0;
+    transform: translateX(-50%);
+}
+
+
+
+/* Ensure events are positioned correctly */
+.event-person1, .event-person3, .event-person5 {
+    top: calc(50% - 250px);
+    left: 50%;
+}
+
+.event-person2, .event-person4, .event-person6 {
+    top: calc(50% + 50px);
+}
+
+/* Adjust positioning for each event */
+.line-person1, .line-person3, .line-person5 {
+    left: calc(20% - 2px); /* Adjust left position */
+    top: -100%; /* Start at the middle of the timeline */
+    height: 130px;
+    width: 2px;
+    transform: translateY(-50%); /* Align properly */
+}
+
+.line-person2, .line-person4, .line-person6 {
+    left: calc(80% - 2px); /* Adjust right-side position */
+    top: 45%; /* Start at the middle */
+    width: 2px;
+    height: 90%;
+
+}
+
+/* Hover Effect */
+.event:hover {
+    transform: scale(1.2);
+}
+
+/* Circular Image */
+.event img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid rgba(43, 18, 1, 0.885);
+    transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Year Text */
+.year {
+    font-size: 30px;
+    font-weight: bold;
+    color: #222;
+    display: block;
+    margin-top: 1px;
+}
+
+/* Info Text */
+.info {
+    font-style: italic;
+    font-family: 'Noto Serif Ethiopic', serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 5px;
+    text-shadow: 2px 1px 0px rgba(0, 0, 0, 1);
+}
+
+/* Unique Positioning for Each Event */
+.event-person1 { margin-top: -150px; position: absolute; left: 10%; top: -80px; }
+.event-person2 { margin-top: 150px; position: absolute; left: 25%; top: 80px; }
+.event-person3 { margin-top: -150px; position: absolute; left: 40%; top: -80px; }
+.event-person4 { margin-top: 150px; position: absolute; left: 55%; top: 80px; }
+.event-person5 { margin-top: -150px; position: absolute; left: 70%; top: -80px; }
+.event-person6 { margin-top: 150px; position: absolute; left: 85%; top: 80px; }
+
+/* Circles */
+.circle {
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    
+}
+
+/* Unique Positioning for Each Circle */
+.circle-person1 { left: 10%; }
+.circle-person2 { left: 25%; }
+.circle-person3 { left: 40%; }
+.circle-person4 { left: 55%; }
+.circle-person5 { left: 70%; }
+.circle-person6 { left: 85%; }
+
+/* Show black dot when hovering over the event */
+.event:hover .circle {
+    background-color: black;
+}
+
+.event:hover img {
+    box-shadow: 0 0 50px rgb(255, 255, 255);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.combo-box {
+    width: 200px;
+    padding: 20px;
+    position: fixed;
+    bottom: 60px; /* Keeps it above the footer */
+    left: 20px;
+    display: inline-block;
+}
+.second-combo {
+    left: 250px; /* Adjust to prevent overlap */
+}
+
+/* Stylish Button */
+.combo-button {
+    background: #6d4c41; /* Brownish color */
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.combo-button:hover {
+    background: #5a3b31;
+    transform: scale(1.05); /* Slight pop-up effect */
+}
+
+/* Dropdown Content (Now Appears Above the Button) */
+.combo-content {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Moves dropdown above the button */
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    
+    /* Smooth Transition */
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* Dropdown Items */
+.combo-content a {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.combo-content a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateX(8px); /* Slight right movement */
+}
+
+/* Show Dropdown on Button Click */
+.combo-box.active .combo-content {
+    display: block;
+    transform: translateY(0); /* Moves it smoothly upwards */
+    opacity: 1;
+}
+
+.video-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 9999; /* Keep above everything */
+    width: 70%; /* Default width */
+    max-width: 700px; /* Prevents video from getting too large */
+}
+
+.video-wrapper {
+    display: none;
+    position: absolute; /* Keep it from affecting other objects */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the video */
+    background: rgba(0, 0, 0, 0.8); /* Optional: Dark background */
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 9999; /* Keep above everything */
+}
+
+
+.close-btn {
+    position: absolute;
+    top: -15px; 
+    right: -15px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10000; /* Keep it above everything */
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #19100dd4;
+    box-shadow: 0 -5px 20px rgb(0, 0, 0);
+    position: relative;
+    width: 100%;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nav-title {
+    font-family: 'Copperplate Gothic 29 BC', sans-serif;
+    color: white;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar & Hamburger Menu */
+.nav-right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 15px; /* Adjust as needed */
+    right: 15px; /* Ensures it's inside the screen */
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100; 
+    transition: all 0.3s ease-in-out;
+    position: fixed; /* Ensures it stays on top */
+    top: 10px; /* Adjust distance from the top */
+    right: 20px; /* Keeps space from the right edge */
+    width: 40px;
+    height: 35px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Ensure menu bars transition properly */
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Transform into 'X' and Color Transition */
+.hamburger.active {
+    width: 40px; /* Expand width slightly */
+    height: 40px; /* Expand height slightly */
+    padding: 10px; /* Adjust padding */
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(18px) rotate(45deg);
+    background-color: black;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    background-color: black;
+}
+
+/* Sidebar Menu */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    margin: 0;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    padding-top: 50px;
+    z-index: 15;
+}
+
+/* Show Sidebar */
+.nav-links.show {
+    right: 0;
+}
+
+/* Sidebar Links */
+.nav-links li {
+    list-style: none;
+    padding: 15px;
+    text-align: left;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: brown;
+}
+
+.hero {
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Fit to screen */
+    overflow: hidden;
+}
+
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fix footer at the bottom */
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Noto Serif Ethiopic', serif;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    background: #19100dd4;
+    box-shadow: 0 -5px 20px rgb(0, 0, 0);
+    margin-top: auto;
+}
+
+
+/* COMBO BOX AND VIDEO RESPONSIVE*/
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+    .combo-box {
+        position: fixed;
+        width: 180px;
+        padding: 15px;
+        bottom: 50px;
+        left: 15px;
+    }
+
+    .second-combo {
+        left: 220px;
+    }
+
+    .combo-button {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .video-container {
+        width: 50%;
+        max-width: 100px;
+    }
+}
+/* COMBO BOXS*/
+
+@media (max-width: 768px) {
+    .combo-box {
+        width: 160px;
+        bottom: 40px;
+        left: 10px;
+        padding: 10px;
+    }
+
+    .second-combo {
+        left: 180px;
+    }
+
+    .combo-button {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .combo-content {
+        min-width: 160px;
+    }
+
+    .video-container {
+        width: 50%;
+        max-width: 100px;
+    }
+}
+
+/* COMBO BOXS*/
+@media (max-width: 480px) {
+    .combo-box {
+        width: 100%;
+        position: static;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .second-combo {
+        left: 0;
+    }
+
+    .combo-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .combo-content {
+        min-width: 100%;
+        position: relative;
+        text-align: center;
+    }
+
+    .video-container {
+        width: 50%;
+        max-width: 100px;
+    }
+
+    .close-btn {
+        top: 5px;
+        right: 5px;
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+}
+
+/*TIMELINES */
+
+/* Vertical Layout for Small Screens */
+@media (max-width: 768px) {
+
+    .vertical-line {
+        display: none !important; /* Hide the vertical line */
+        
+    }
+    
+    .timeline {
+        flex-direction: column; /* Keeps the vertical layout */
+        align-items: center;
+    }
+
+    .timeline::before {
+        content: "";  /* Ensure the pseudo-element is visible */
+        position: absolute;
+        width: 4px; /* Adjust thickness of the vertical line */
+        height: 80%; /* Adjust this if the line is too long or too short */
+        background-color: #2b1201; /* Color of the line */
+        left: 50%; /* Keeps the line centered */
+        top: 120px; /* Aligns the top of the timeline */
+        transform: translateX(-50%); /* Centers the line */
+    }
+
+    .event {
+        width: 90%; /* Slightly reduce width for better spacing */
+        text-align: center;
+        margin-bottom: 40px; /* Increase space between events */
+        position: relative;
+    }
+
+    .event img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 3px solid #2b1201; /* Adjust border thickness */
+    }
+
+    .year {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 5px; /* More spacing above year text */
+    }
+
+    .info {
+        font-size: 16px;
+        font-style: italic;
+        margin-top: 3px;
+    }
+
+    .event:nth-child(even) {
+        align-self: center; /* Center all items properly */
+    }
+
+    .event:nth-child(odd) {
+        align-self: center;
+    }
+
+    /* Adjust only the first circle */
+    .event-person1 {
+        transform: translateY(320px) !important; /* Keeps it locked in place */
+        left: auto;
+        margin-bottom: 250px;
+    }
+
+    /* Adjust spacing for all circles */
+     .event-person2, .event-person3, .event-person4, .event-person5, .event-person6 {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 10px 0; /* Increase spacing for better readability */
+    }
+
+    /* Fix buttons at the bottom */
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 20px; /* Prevents overlap */
+    }
+
+    .buttons-container button {
+        width: 90%;
+        font-size: 16px;
+    }
+}
+
+
+
+

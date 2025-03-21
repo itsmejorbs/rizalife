@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jose Rizal Life</title>
+    <link rel="stylesheet" href="transition.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="timeline.css">
+</head>
+<body>               
+    <header>
+        <nav>
+            <a href="index.html" id="logo-link">
+                <img src="pictures/icon.png" alt="Icon" class="nav-icon">
+            </a>
+            
+            <span class="nav-title">Dr. Jose Rizal Life</span>
+            <div class="nav-right">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Members</a></li>
+                    <li><a href="#">Programmer</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="timeline-header">
+        <h6>ANG PAGSILANG</h6>
+        <h3>Jose Rizal</h3>
+    </div>
+ 
+    <div class="timeline">
+
+        <button id="timeline-arrow-right" class="timeline-arrow timeline-arrow-right">&rarr;</button>
+
+        <div class="vertical-line line-person1"></div>
+        <div class="vertical-line line-person2"></div>
+        <div class="vertical-line line-person3"></div>
+        <div class="vertical-line line-person4"></div>
+        <div class="vertical-line line-person5"></div>
+        <div class="vertical-line line-person6"></div>
+    
+        <div class="event event-person1">
+            <div class="circle circle-person1"></div>
+            <img src="pictures/RIZZAL.jpg" 
+                 alt="Jose Protasio Rizal"
+                 data-description="Si Jose Protasio Rizal ay ang Pambansang Bayani ng Pilipinas. Siya ay isinilang sa Calamba, Laguna noong Hunyo 19, 1861. Ang kanyang mga magulang ay sina Ginoong Francisco Mercado at Ginang Teodora Alonzo.
+
+                 Isinilang si Jose Rizal noong ika-l9 ng Hunyo, 1861. Isinilang siya sa Calamba sa lalawigan ng Laguna. Ang bayang ito ay napapagitnaan ng Lawa ng Laguna at Batangas.Si Jose Rizal ang ika-pito sa labing –isang anak nina Francisco Mercado Rizal at Teodora Alonso Realonda. Siya ay bininyagan noong ika-22 ng Hunyo,1861 ni Pari Rufino Collantes, kura paroko ng Calamba. Ang kanyang ninong ay si Pedro Casañas.">
+
+                 
+
+            <span class="year">1861-1896</span>
+            <p class="info">Jose Protasio Rizal</p>
+        </div>
+    
+        <div class="event event-person2">
+            <div class="circle circle-person2"></div>
+            <img src="pictures/nanay.jpg" 
+                 alt="Teodora Alonso Realonda"
+                 data-description="Si Donya Teodora (1826-1911), ang ina ng bayani, ay isinilang sa Maynila noong Nobyembre 8,1826, at nakapag-aral sa Kolehiyo ng Santa Rosa, isang kilalang kolehiyo para sa kababaihan sa lungsod. Kahanga-hanga siyang babae, mabini kung kumilos, may talino sa panitikan, negosyo, at taglay niya ang kahalintulad na katatagan ng isang babaing Sparta. Masuyo siyang inilarawan ni Rizal: Ang aking Nanay at katangi-tangi; maalam siya sa panitikan at mahusay mag Espanyol kaysa sa akin. Siya ang nagwawasto ng aking mga tula at binibigyan niya ako ng magagandang payo nang nag-aaral ako ng retorika. Siya ay mahusay sa matematika at maraming aklat na nabasa. Namatay si Donya Teodora sa Maynila noong Agosto 16,1911 sa edad na 85.">
+            <span class="year">1826-1913</span>
+            <p class="info">Teodora Alonso Realonda</p>
+        </div>
+    
+        <div class="event event-person3">
+            <div class="circle circle-person3"></div>
+            <img src="pictures/tatay.jpg" 
+                 alt="Francisco Rizal"
+                 data-description="Ang Ama ng bayani, si Francisco (1818-1898) ay isinilang sa Binan, Laguna, noong Mayo 11,1818. Nag-aral siya ng Latin at Pilosopiya sa Kolehiyo ng San Jose sa Maynila. Noong bata pa, pagkaraan mamatay ng mga magulang, lumipat siya sa Calamba at naging kasamang magsasaka sa asyendang pag-aari ng mga Dominiko. Masipag siya, bihirang magsalita, ngunit mas maraming nagagawa, malakas ang pangangatawan, at maayos ang pag-iisip. Namatay siya sa Maynila noong Enero 5,1898 sa edad na 80. Sa tala ng kanyang buhay, tinawag ni Rizal ang kanyang ama na Huwarang Ama.">
+            <span class="year">1818-1898</span>
+            <p class="info">Francisco Rizal</p>
+        </div>
+    
+        <div class="event event-person4">
+            <div class="circle circle-person4"></div>
+            <img src="pictures/panganay.jpg" 
+                 alt="Saturnina Rizal"
+                 data-description="panganay sa magkakapatid na Rizal, ang palayaw niya’y Neneng; ikinasal siya kay Manuel T. Hidalgo ng Tanawan, Batangas.">
+            <span class="year">1850-1913</span>
+            <p class="info">Saturnida Rizal</p>
+        </div>
+    
+        <div class="event event-person5">
+            <div class="circle circle-person5"></div>
+            <img src="pictures/pangalawa paciano.jpg" 
+                 alt="Paciano Rizal"
+                 data-description="Si Paciano ay ang nakatatandang kapatid ni Jose Rizal. Ipinanganak siya noong Marso 9, 1851 sa Calamba, Laguna. Siya ang pangalawa sa labing-isang magkakapatid. Inalagaan niya si Jose Rizal at tinulungan niya siyang makarating sa Europa. ">
+            <span class="year">1851-1930</span>
+            <p class="info">Paciano Rizal</p>
+        </div>
+    
+        <div class="event event-person6">
+            <div class="circle circle-person6"></div>
+            <img src="pictures/narcisa.PNG" 
+                 alt="Narcisa Rizal"
+                 data-description="palayaw niya ay Sisa at ikinasal siya kay Antonio Lopez (pamangkin ni Padre Leoncio Lopez), isang guro sa Morong.">
+            <span class="year">1852-1939</span>
+            <p class="info">Narcisa Rizal</p>
+        </div>
+        
+        
+    </div>
+
+    
+    
+    <!-- VIDEOS OF RIZAL COMBO BOX-->
+    <div class="combo-box">
+        <button class=" combo-button">▲Informative Videos About Jose Rizal</button>
+        <div class="combo-content">
+            <a href="#" onclick="showVideo('video1')">▶ Lost Video Tape of Jose Rizal Execution</a>
+            <a href="#" onclick="showVideo('video2')">▶ Jose Rizal - Full Animation | Short Animation</a>
+            <a href="#" onclick="showVideo('video3')">▶ Dr. Jose Rizal Family Tree</a>
+        </div>
+    </div>
+    
+    <div id="video-container">
+        <div id="video1" class="video-wrapper">
+            <button class="close-btn" onclick="closeVideo()">✖</button>
+            <video class="video-player" width="500" controls>
+                <source src="videos/Lost video tape of Jose Rizal Execution.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <div id="video2" class="video-wrapper">
+            <button class="close-btn" onclick="closeVideo()">✖</button>
+            <video class="video-player" width="500" controls>
+                <source src="videos/Jose Rizal - Full Animation _ Short Animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <div id="video3" class="video-wrapper">
+            <button class="close-btn" onclick="closeVideo()">✖</button>
+            <video class="video-player" width="500" controls>
+                <source src="videos/Dr. Jose Rizal Family Tree.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- FAMOUS WORKS OF RIZAL COMBO BOX-->
+
+    <div class="combo-box second-combo">
+        <button class="combo-button">▲ Famous Works of Rizal</button>
+        <div class="combo-content">
+        <a href="#" data-title="El Filibusterismo" 
+           data-img="pictures/elfilibusterismo.jpg" 
+           data-description="Ang nobelang El filibusterismo (literal na Ang Pilibusterismo) o Ang Paghahari ng Kasakiman ay ang pangalawang nobelang isinulat ng pambansang bayani ng Pilipinas na si José Rizal, na kaniyang buong pusong inialay sa tatlong paring martir na lalong kilala sa bansag na Gomburza o Gomez, Burgos, at Zamora. Ito ang karugtong o sikwel sa Noli Me Tangere at tulad sa Noli, nagdanas si Rizal ng hírap habang sinusulat ito at, tulad din nito, nakasulat ito sa Kastila. Sinimulan niya ang akda noong Oktubreng 1887 habang nagpapraktis ng medisina sa Calamba.
+
+           SA AKING MGA KABATA 
+           
+           Ang Sa Aking Mga Kabata ay isang tula na nakasulat sa wikang Tagalog tungkol sa pag-ibig ng isang tao sa kanyang katutubong wika. Madalas na pinapalagay na ginawa ito ni Jose Rizal, ang Pambansang Bayani ng Pilipinas at sinasabing naisulat niya noong 1869 sa gulang na walong taon at unang tulang ginawa ni Rizal.
+           
+           A Filipinas
+           
+           nagpapahayag na ang Pilipinas ay bayan ng mga Pilipino at humihiling sa mga kabataan na tumuklas ng kabantugan para sa bayan. Inilahok sa timpalak-pampanitikan ni Liceo Artistico Literario de Manila, kapisanan ng magiliwin sa sining. Nagwagi ng unang gantimpala at tumanggap ng pluming pilak.
+           .">
+           ▶ EL FILIBUSTERISMO
+        </a>
+        <a href="#" data-title="Noli Me Tangere" 
+           data-img="pictures/noli.jpg" 
+           data-description="Mula sa salitang Latin na ibig sabihin ay (huwag mo akong salingin (o hawakan).
+
+           Ang Noli Me Tángere ay isang nobelang isinulat ni Jose Rizal, at inilathala noong 1887, sa Europa. Hango sa Latin ang pamagat nito na may kahulugang (huwag mo akong salingin (o hawakan). Sinipi ito mula sa San Juan 20:17 kung saan sinabi ni Hesus kay Maria Magdalena na (Huwag mo akong salingin sapagkat hindi pa ako nakaaakyat sa aking ama). Mas madalas itong tinatawag na Noli; at ang salin nito sa Ingles ay Social Cancer.
+           ">
+           ▶ NOLI ME TANGERE
+        </a>
+            </div>
+    </div>
+    
+
+    <div id="info-box" class="hidden"></div>
+
+    <script src="timeline.js"></script>    
+    <script src="transition.js"></script>   
+
+
+    <footer>
+        <p>Copyright © 2025 GROUP 3</p>
+    </footer>
+</html>
