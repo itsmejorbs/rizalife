@@ -1,0 +1,116 @@
+/* Modal Container */
+.modal__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+    z-index: var(--z-modal);
+}
+
+/* Modal Content - Increased Size & Dynamic Height */
+.modal__content {
+    display: flex;
+    width: 850px; /* Slightly bigger */
+    max-width: 95%;
+    max-height: 80vh; /* Limits height to avoid overflow */
+    background-color: var(--container-color);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    align-items: stretch; /* Ensures both sections grow equally */
+}
+
+/* Image Section - Adjusted for Better Resizing */
+.modal__img-container {
+    width: 40%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Image Adjustments */
+.modal__img {
+    width: 100%;
+    height: 100%; /* Fills the container */
+    object-fit: cover; /* Ensures proper aspect ratio */
+    border-radius: 10px;
+}
+
+/* Text Section - More Space & Better Scroll */
+.modal__text-container {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align text at the top */
+    text-align: left;
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    overflow-y: auto; /* Enables scrolling if text is too long */
+    max-height: 100%; /* Prevents text from overflowing */
+}
+
+/* Modal Close Button */
+.modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: var(--first-color);
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.modal__close:hover {
+    color: red;
+}
+
+.modal__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal__prev, .modal__next {
+    padding: 10px 20px;
+    border: 2px solid black; /* Added border */
+    background-color: var(--first-color);
+    color: black;
+    font-weight: bold; /* Fixed font-style to font-weight */
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.modal__prev:hover, .modal__next:hover {
+    background-color: rgb(108, 108, 215);
+    border-color: rgb(50, 50, 150); /* Changes border color on hover */
+}
+
+.modal__prev {
+    display: none; /* Initially hidden for first person */
+}
+
+.modal.hide-nav .modal__prev,
+.modal.hide-nav .modal__next {
+    display: none !important;
+}
+
+
+
+
+
+

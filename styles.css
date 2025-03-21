@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@400;700&display=swap');
+
+/* Ensure Full-Screen Fit */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('pictures/background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #19100dd4;
+    box-shadow: 0 -5px 20px rgb(0, 0, 0);
+    position: relative;
+    width: 100%;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nav-title {
+    font-family: 'Copperplate Gothic 29 BC', sans-serif;
+    color: white;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar & Hamburger Menu */
+.nav-right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 15px; /* Adjust as needed */
+    right: 15px; /* Ensures it's inside the screen */
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100; 
+    transition: all 0.3s ease-in-out;
+    position: fixed; /* Ensures it stays on top */
+    top: 10px; /* Adjust distance from the top */
+    right: 20px; /* Keeps space from the right edge */
+    width: 40px;
+    height: 35px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Ensure menu bars transition properly */
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Transform into 'X' and Color Transition */
+.hamburger.active {
+    width: 40px; /* Expand width slightly */
+    height: 40px; /* Expand height slightly */
+    padding: 10px; /* Adjust padding */
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(18px) rotate(45deg);
+    background-color: black;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    background-color: black;
+}
+
+/* Sidebar Menu */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    margin: 0;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    padding-top: 50px;
+    z-index: 15;
+}
+
+/* Show Sidebar */
+.nav-links.show {
+    right: 0;
+}
+
+/* Sidebar Links */
+.nav-links li {
+    list-style: none;
+    padding: 15px;
+    text-align: left;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: brown;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Fit to screen */
+    overflow: hidden;
+}
+
+.content h1 {
+    font-family: 'Noto Serif Ethiopic', serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 4px 3px 0px rgba(0, 0, 0, 1);
+}
+
+.content p {
+    font-family: 'Noto Serif Ethiopic', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.start-btn {
+    font-family: 'Noto Serif Ethiopic', serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: rgb(50, 20, 1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 3px 10px rgb(0, 0, 0);
+    border-radius: 50px;
+}
+
+.start-btn:hover {
+    background: white;
+    color: brown;
+    box-shadow: 0 3px 10px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fix footer at the bottom */
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Noto Serif Ethiopic', serif;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    background: #19100dd4;
+    box-shadow: 0 -5px 20px rgb(0, 0, 0);
+    padding: 10px;
+}
+body:not(.timeline-page) .previous,
+body:not(.timeline-page) .next {
+    display: none !important;
+}
